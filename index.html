@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+
+<body>
+	<script src="./tool/myModule.js"></script>
+	<script>
+		myModule.config({
+			alias: {
+				'a': 'common/js/a',
+				'b': 'common/js/b'
+			}
+		});
+		// 启动模块加载器    a.js   b.js 
+		myModule.use(["a", "b"], function (a, b) {
+			console.log(a);
+			console.log(b);
+			console.log("myModule...");
+		});
+	</script>
+</body>
+
+</html>
